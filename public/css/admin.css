@@ -1,0 +1,101 @@
+/* ===============================
+   Global Styles
+================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+}
+
+/* ===============================
+   Sidebar
+================================= */
+.fixed {
+    -ms-flex: 0 0 250px;
+    flex: 0 0 250px;
+    min-height: 100vh;
+    background-color: #212529;
+    padding: 1rem;
+}
+
+.fixed a {
+    text-decoration: none;
+}
+
+.nav-link {
+    padding: 0.5rem 0;
+    color: #fff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: #343a40;
+    border-radius: 5px;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .fixed {
+        flex: 0 0 100px;
+        padding: 0.5rem;
+    }
+
+    .fixed .fs-4 {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
+
+/* ===============================
+   Content Area
+================================= */
+.content-grey {
+    background-color: #f8f9fc;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+/* ===============================
+   Top Navigation
+================================= */
+.img-profile {
+    height: 2rem;
+    width: 2rem;
+    object-fit: cover;
+}
+
+.profile-font {
+    color: #858796 !important;
+    font-size: 80%;
+    font-weight: 400;
+}
+
+/* ===============================
+   Footer
+================================= */
+.copyright {
+    background-color: #1a252f;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 1rem 0;
+}
+
+/* ===============================
+   Utility
+================================= */
+hr {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}

@@ -4,11 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+/**
+ * Summary of Product
+ * @property Item[] $items
+ */
 class Product extends Model
 {
-    use HasFactory;
 
+    use HasFactory;
+    public static function validate($request)
+
+    
+    {
+$request->validate([
+"name" => "required|max:255",
+"description" => "required",
+"price" => "required|numeric|gt:0",
+'image' => 'image',
+]);
+}
     /**
      * Kolom yang bisa diisi secara mass-assignment
      */
@@ -24,6 +38,31 @@ class Product extends Model
     {
         return $this->attributes['id'];
     }
+public function items()
+{
+return $this->hasMany(Item::class);
+}
+public function getItems()
+{
+return $this->items;
+}
+public function setItems($items)
+{
+$this->items = $items;
+}
+    public static function sumPricesByQuantities($products, $productsInSession): float|int
+{
+    $total = 0;
+
+    foreach ($products as $product) {
+        $productId = $product->getId();
+        $quantity = $productsInSession[$productId] ?? 0;
+
+        $total += $product->getPrice() * $quantity;
+    }
+
+    return $total;
+}
 
     public function setId($id)
     {

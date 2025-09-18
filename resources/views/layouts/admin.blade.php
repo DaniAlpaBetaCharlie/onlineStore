@@ -11,7 +11,7 @@
         crossorigin="anonymous"
     />
 
-    <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
+    <link href="{{ secure_asset('/css/admin.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>@yield('title', 'Admin - Online Store')</title>
 </head>

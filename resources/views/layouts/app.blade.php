@@ -10,7 +10,7 @@
         rel="stylesheet" 
         crossorigin="anonymous"
     >
-
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet" />
     <title>@yield('title', 'Online Store')</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
